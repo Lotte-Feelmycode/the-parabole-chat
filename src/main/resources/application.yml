@@ -1,0 +1,10 @@
+server:
+  port: 8090
+spring:
+  application:
+    name: the-parabole-chat
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: parabole
