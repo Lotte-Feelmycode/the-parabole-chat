@@ -20,11 +20,18 @@ public class Chat {
     private Reciever receiver;
     private Boolean isSeller;
     private Boolean isSecret;
+    // TODO: 이벤트 방번호로 변경
     private String roomNumber;
+    private String chatTitle;
     private Boolean isEvent;
+    private Long sellerId;
     private LocalDateTime createdAt;
 
-    public void setSeller(Boolean seller) {
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+
+    public void setIsSeller(Boolean seller) {
         isSeller = seller;
     }
 
@@ -38,8 +45,8 @@ public class Chat {
 
     public Chat(String id, String msg, Coupon coupon, Product product, Sender sender,
         Reciever receiver,
-        Boolean isSeller, Boolean isSecret, String roomNumber, Boolean isEvent,
-        LocalDateTime createdAt) {
+        Boolean isSeller, Boolean isSecret, String roomNumber, String chatTitle, Boolean isEvent,
+        Long sellerId, LocalDateTime createdAt) {
         this.id = id;
         this.msg = msg;
         this.coupon = coupon;
@@ -49,7 +56,9 @@ public class Chat {
         this.isSeller = isSeller;
         this.isSecret = isSecret;
         this.roomNumber = roomNumber;
+        this.chatTitle = chatTitle;
         this.isEvent = isEvent;
+        this.sellerId = sellerId;
         this.createdAt = createdAt;
     }
 }

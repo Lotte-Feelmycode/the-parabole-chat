@@ -1,11 +1,13 @@
 package com.feelmycode.parabolechat.repository;
 
 import com.feelmycode.parabolechat.model.Chat;
+import java.util.List;
 import org.springframework.data.mongodb.repository.Query;
 import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
 import org.springframework.data.mongodb.repository.Tailable;
 import org.springframework.stereotype.Repository;
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 @Repository
 public interface ChatRepository extends ReactiveMongoRepository<Chat, String> {
@@ -15,4 +17,6 @@ public interface ChatRepository extends ReactiveMongoRepository<Chat, String> {
 
     @Tailable
     Flux<Chat> findChatsByRoomNumber(String roomNumber);
+
+    Flux<Chat> findChatsBySellerIdOrderByCreatedAtDesc(Long sellerId);
 }

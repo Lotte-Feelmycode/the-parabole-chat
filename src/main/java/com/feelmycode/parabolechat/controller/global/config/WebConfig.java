@@ -1,4 +1,4 @@
-package com.feelmycode.parabolechat.global.config;
+package com.feelmycode.parabolechat.controller.global.config;
 
 import org.springframework.web.reactive.config.CorsRegistry;
 import org.springframework.web.reactive.config.WebFluxConfigurer;
